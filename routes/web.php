@@ -23,24 +23,25 @@ Route::get('/', function () {
     ]);
 });
 
-// Single Jobs
+// Single Job
 Route::get('/jobs/{id}', function ($id) {
-    return view('Jobs', [
+    return view('Job', [
         'job' => Job::find($id)
     ]);
 });
+
     
 
-Route::get('/hello', function(){
-    return response('<h1>Hello World</h1>', 200)
-        ->header('Content-Type', 'text/plain')
-        ->header('foo', 'bar');
-});
+// Route::get('/hello', function(){
+//     return response('<h1>Hello World</h1>', 200)
+//         ->header('Content-Type', 'text/plain')
+//         ->header('foo', 'bar');
+// });
 
-Route::get('/posts/{id}', function($id){
-    return response('Post ' . $id);
-}) -> where('id', '[0-9]+');
+// Route::get('/posts/{id}', function($id){
+//     return response('Post ' . $id);
+// }) -> where('id', '[0-9]+');
 
-Route::get('/search', function(Request $request){
-    dd($request->name . ' ' . $request->city);
-});
+// Route::get('/search', function(Request $request){
+//     dd($request->name . ' ' . $request->city);
+// });
